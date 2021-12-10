@@ -16,7 +16,7 @@ public class User {
             generator = "user_sequence"
     )
     //@Column(name = "id_user ")
-    private Integer id_user ;
+    private Long id_user ;
     private String firstName_user;
     private String lastName_user;
     private String email_user;
@@ -25,7 +25,7 @@ public class User {
     public User() {
     }
 
-    public User(Integer id_user,
+    public User(Long id_user,
                 String firstName_user,
                 String lastName_user,
                 String email_user,
@@ -49,11 +49,11 @@ public class User {
 
 
     //Getter and Setter
-    public Integer getId_user() {
+    public Long getId_user() {
         return id_user;
     }
 
-    public void setId_user(Integer id_user) {
+    public void setId_user(Long id_user) {
         this.id_user = id_user;
     }
 

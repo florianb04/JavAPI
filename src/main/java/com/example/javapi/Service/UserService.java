@@ -1,7 +1,8 @@
 package com.example.javapi.Service;
 
 import com.example.javapi.entity.User;
-import org.springframework.stereotype.Component;
+import com.example.javapi.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,16 +10,14 @@ import java.util.List;
 @Service
 public class UserService {
 
-    //@GetMapping
+    private final UserRepository userRepository;
+
+    @Autowired
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     public List<User> getUsers() {
-        return List.of(
-                new User(
-                        1,
-                        "aaa",
-                        "AAA",
-                        "aaa@aaa;fr",
-                        "aaa"
-                )
-        );
+        return userRepository.findAll();
     }
 }
