@@ -16,14 +16,14 @@ public class UserConfig {
             User aaa = new User(
                     "aaa",
                     "AAA",
-                    "aaa@aaa;fr",
+                    "aaa@aaa.fr",
                     "aaa"
             );
 
             User bbb = new User(
                     "bbb",
                     "BBB",
-                    "bbb@bbb;fr",
+                    "bbb@bbb.fr",
                     "bbb"
             );
 

@@ -5,6 +5,7 @@ import com.example.javapi.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
@@ -31,5 +32,14 @@ public class userController {
     @DeleteMapping(path = "{id_user}")
     public void deleteUser (@PathVariable("id_user") Long id_user ){
         userService.deleteUser(id_user);
+    }
+
+    @PutMapping(path = {"{id_user}"})
+    public void updateUser(
+            @PathVariable("id_user") Long id_user,
+            @RequestParam(required = false) String firstName_user,
+            @RequestParam(required = false) String lastName_user,
+            @RequestParam(required = false) String email_user) {
+        userService.updateUser(id_user, firstName_user, lastName_user, email_user);
     }
 }
